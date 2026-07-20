@@ -15,9 +15,9 @@ function Navbar() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 border ${
+                `px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? "bg-gray-100 border-gray-300 text-gray-900"
+                    ? "bg-gray-100 text-indigo-600"
                     : "border-transparent text-gray-600 hover:text-indigo-600 hover:bg-gray-50"
                 }`
               }
@@ -28,9 +28,9 @@ function Navbar() {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 border ${
+                `px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? "bg-gray-100 border-gray-300 text-gray-900"
+                    ? "bg-gray-100 text-indigo-600"
                     : "border-transparent text-gray-600 hover:text-indigo-600 hover:bg-gray-50"
                 }`
               }
