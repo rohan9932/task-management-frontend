@@ -23,7 +23,7 @@ function TaskList() {
       </div>
       {isLoading ? (
         <div className="flex justify-center items-center py-10">
-          <p className="text-gray-500 font-medium animate-pulse">Loading tasks...</p>
+          <p className="text-gray-500 dark:text-slate-400 font-medium animate-pulse">Loading tasks...</p>
         </div>
       ): (
         <div className="px-30 py-10">
