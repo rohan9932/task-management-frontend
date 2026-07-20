@@ -2,11 +2,20 @@ import { useContext } from 'react';
 import { TaskContext } from "../Hooks/TaskContextProvider.jsx";
 
 function TaskForm() {
-  const { taskInput, setTaskInput } = useContext(TaskContext);
+  const { taskInput, setTaskInput, setTaskDetailList } = useContext(TaskContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // do some work
+    // update tasksList
+    setTaskDetailList((prevList) => [
+      ...prevList,
+      {
+        id: prevList.length > 0 ? prevList[prevList.length-1].id + 1 : 1,
+        title: taskInput,
+        completed: false
+      }
+    ]);
+    // clear taskInput
     setTaskInput("");
   }
 
