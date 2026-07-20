@@ -1,8 +1,9 @@
-import { useContext } from 'react';
+import {useContext, useEffect, useRef} from 'react';
 import { TaskContext } from "../Hooks/TaskContextProvider.jsx";
 
 function TaskForm() {
   const { taskInput, setTaskInput, setTaskDetailList } = useContext(TaskContext);
+  const inputRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,11 +20,16 @@ function TaskForm() {
     setTaskInput("");
   }
 
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   return (
     <div className="px-6 py-3 border-2 bg-gray-100 border-[#f3f4f6] rounded-2xl">
       {/* Form Container */}
       <form onSubmit={handleSubmit} className="flex gap-5 w-full justify-between items-center">
         <input
+          ref={inputRef}
           value={taskInput}
           onChange={(e) => setTaskInput(e.target.value)}
           type="text"
